@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.FrameLayout
+import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity(){
     var contadoresMaiz = hashMapOf(
@@ -24,6 +26,9 @@ class MainActivity : AppCompatActivity(){
     var quesoDerecha :Button?=null
     var frijolDerecha :Button?=null
     var revueltasDerecha :Button?=null
+    var loadingContainer :View?= null
+
+    var sendButton :Button?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,7 +50,13 @@ class MainActivity : AppCompatActivity(){
         frijolDerecha!!.setOnClickListener { addArroz(FRIJOLES) }
         revueltasDerecha!!.setOnClickListener { addArroz(REVUELTAS) }
 
+        sendButton = findViewById(R.id.sendButton)
+        sendButton!!.setOnClickListener { showLoading(true) }
+        sendButton.setBackgroundColor(resources.getColor(R.color.colorPrimary))
 
+        loadingContainer = findViewById(R.id.loadingContainer)
+        loadingContainer!!.setOnClickListener { showLoading(false) }
+        setActionBar(null)
     }
 
     fun addMaiz(relleno: String) {
@@ -54,7 +65,11 @@ class MainActivity : AppCompatActivity(){
 
     fun addArroz(relleno: String) {
         contadoresArroz[relleno] = contadoresArroz[relleno]!! + 1
+    }
 
+    fun showLoading(show: Boolean) {
+        val visibility = if(show) View.VISIBLE else View.GONE
+        loadingContainer!!.visibility = visibility
     }
 
     companion object{
