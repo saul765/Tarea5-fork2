@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.FrameLayout
 import androidx.core.content.ContextCompat
 
-class MainActivity : AppCompatActivity(){
+class MainActivity : AppCompatActivity() {
     var contadoresMaiz = hashMapOf(
         QUESO to 0,
         FRIJOLES to 0,
@@ -19,16 +19,25 @@ class MainActivity : AppCompatActivity(){
         FRIJOLES to 0,
         REVUELTAS to 0
     )
-    var quesoIzquierda :Button?=null
-    var frijolIzquierda :Button?=null
-    var revueltaIzquierda :Button?=null
 
-    var quesoDerecha :Button?=null
-    var frijolDerecha :Button?=null
-    var revueltasDerecha :Button?=null
-    var loadingContainer :View?= null
+    val pupusaStringResources = hashMapOf(
+        QUESO to R.string.pupusa_queso,
+        FRIJOLES to R.string.frijol_con_queso,
+        REVUELTAS to R.string.revueltas
+    )
 
-    var sendButton :Button?=null
+    var botonesMaiz = hashMapOf<String, Button>()
+    var botonesArroz = hashMapOf<String, Button>()
+    var quesoIzquierda: Button? = null
+    var frijolIzquierda: Button? = null
+    var revueltaIzquierda: Button? = null
+
+    var quesoDerecha: Button? = null
+    var frijolDerecha: Button? = null
+    var revueltasDerecha: Button? = null
+    var loadingContainer: View? = null
+
+    var sendButton: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +45,12 @@ class MainActivity : AppCompatActivity(){
         quesoIzquierda = findViewById(R.id.quesoIzquierda)
         frijolIzquierda = findViewById(R.id.frijolIzquierda)
         revueltaIzquierda = findViewById(R.id.revueltasIzquierda)
+
+        botonesMaiz= hashMapOf(
+            QUESO to quesoIzquierda!!,
+            FRIJOLES to frijolIzquierda!!,
+            REVUELTAS to revueltaIzquierda!!
+        )
 
         quesoIzquierda!!.setOnClickListener { addMaiz(QUESO) }
         frijolIzquierda!!.setOnClickListener { addMaiz(FRIJOLES) }
@@ -46,25 +61,57 @@ class MainActivity : AppCompatActivity(){
         frijolDerecha = findViewById(R.id.frijolDerecha)
         revueltasDerecha = findViewById(R.id.revueltasDerecha)
 
+        botonesArroz= hashMapOf(
+            QUESO to quesoDerecha!!,
+            FRIJOLES to frijolDerecha!!,
+            REVUELTAS to revueltasDerecha!!
+        )
+
         quesoDerecha!!.setOnClickListener { addArroz(QUESO) }
         frijolDerecha!!.setOnClickListener { addArroz(FRIJOLES) }
         revueltasDerecha!!.setOnClickListener { addArroz(REVUELTAS) }
 
         sendButton = findViewById(R.id.sendButton)
         sendButton!!.setOnClickListener { showLoading(true) }
-        sendButton.setBackgroundColor(resources.getColor(R.color.colorPrimary))
 
         loadingContainer = findViewById(R.id.loadingContainer)
         loadingContainer!!.setOnClickListener { showLoading(false) }
+
+        displayCounters()
         setActionBar(null)
+    }
+
+    fun displayCounters() {
+        for ((key,value) in contadoresMaiz){
+            val resource = pupusaStringResources[key]
+            val text = this.resources.getString(resource!!, value)
+            botonesMaiz[key]!!.text = text
+        }
+
+
+        for ((key,value) in contadoresArroz){
+            val resource = pupusaStringResources[key]
+            val text = this.resources.getString(resource!!, value)
+            botonesArroz[key]!!.text = text
+        }
+
     }
 
     fun addMaiz(relleno: String) {
         contadoresMaiz[relleno] = contadoresMaiz[relleno]!! + 1
+        val contador = contadoresMaiz[relleno]
+        val resource = pupusaStringResources[relleno]
+        val text = this.resources.getString(resource!!, contador)
+        botonesMaiz[relleno]!!.text = text
+        var s = "hola"
+        s = "$s mundo"
     }
-
     fun addArroz(relleno: String) {
         contadoresArroz[relleno] = contadoresArroz[relleno]!! + 1
+        val contador = contadoresArroz[relleno]
+        val resource = pupusaStringResources[relleno]
+        val text = this.resources.getString(resource!!, contador)
+        botonesArroz[relleno]!!.text = text
     }
 
     fun showLoading(show: Boolean) {
