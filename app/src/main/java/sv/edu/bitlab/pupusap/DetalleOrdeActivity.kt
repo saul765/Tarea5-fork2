@@ -1,6 +1,6 @@
 package sv.edu.bitlab.pupusap
 
-import android.content.Context
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -9,7 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import java.text.DecimalFormat
 
-class DetalleOrdeActivity : AppCompatActivity() {
+class DetalleOrdeActivity : AppCompatActivity(), PruebaFragment.PruebaFragmentListener {
   var arroz = arrayListOf<Int>()
   var maiz = arrayListOf<Int>()
   val lineItemsIDs = arrayOf(
@@ -31,6 +31,7 @@ class DetalleOrdeActivity : AppCompatActivity() {
     maiz = params.getIntegerArrayList(CONTADOR_MAIZ)!!
     displayDetalle()
     Log.d("ACTIVITY", "onCreate()")
+    addFragment()
   }
 
   fun displayDetalle() {
@@ -58,10 +59,15 @@ class DetalleOrdeActivity : AppCompatActivity() {
     totalPrecio.text = precio
 
   }
-  //[ARROZ]|[MAIZ]
-  //[3,2,0]|[0,3,0]
-  //[3,2,0,0,3,0]
-  //[0,1,2,|3,4,5]
+
+  fun addFragment() {
+    val fragment = PruebaFragment.newInstance("Hola", "Mundo")
+    val builder = supportFragmentManager
+      .beginTransaction()
+      .add(R.id.pruebaFragmentContainer, fragment, FRAGMENT_TAG)
+    builder.commit()
+  }
+
   fun getDescripcion(index: Int): String {
     return when(index){
       QUESO -> "Queso de arroz"
@@ -74,6 +80,13 @@ class DetalleOrdeActivity : AppCompatActivity() {
     }
   }
 
+
+  //region DetalleOrdeActivity
+  override fun onFragmentInteraction(uri: Uri) {
+    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+  }
+  //endregion
+
   companion object{
     const val QUESO = 0//3
     const val FRIJOLES = 1//4
@@ -84,5 +97,6 @@ class DetalleOrdeActivity : AppCompatActivity() {
     const val CONTADOR_ARROZ = "ARROZ"
     const val CONTADOR_MAIZ = "MAIZ"
     const val VALOR_PUPUSA = 0.5F
+    const val FRAGMENT_TAG = "FRAGMENT_TAG"
   }
 }
