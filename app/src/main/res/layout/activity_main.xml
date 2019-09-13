@@ -25,7 +25,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:id="@+id/textView2" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toStartOf="@+id/guideline2" app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintBottom_toTopOf="@+id/frijolDerecha"/>
+            app:layout_constraintBottom_toTopOf="@+id/frijolIzquierdaMaiz"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -40,10 +40,10 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="@+id/guideline2" app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintBottom_toTopOf="@+id/frijolIzquierda"/>
+            app:layout_constraintBottom_toTopOf="@+id/frijolIDerechaArroz"/>
 
         <Button
-            android:id="@+id/frijolIzquierda"
+            android:id="@+id/frijolIDerechaArroz"
             style="@style/AppTheme.botonPupusaIzquierdo"
             android:text="@string/pupusa_queso"
             app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +54,7 @@
             app:layout_constraintBottom_toTopOf="@+id/quesoDerecha"/>
 
         <Button
-            android:id="@+id/frijolDerecha"
+            android:id="@+id/frijolIzquierdaMaiz"
             style="@style/AppTheme.botonPupusaDerecho"
             android:text="@string/pupusa_queso"
             android:background="@drawable/round_button"
@@ -69,7 +69,7 @@
             style="@style/AppTheme.botonPupusaIzquierdo"
             android:text="@string/frijol_con_queso"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp" app:layout_constraintTop_toBottomOf="@+id/frijolDerecha"
+            android:layout_marginTop="20dp" app:layout_constraintTop_toBottomOf="@+id/frijolIzquierdaMaiz"
             app:layout_constraintEnd_toStartOf="@+id/guideline2" android:layout_marginEnd="8dp"
             app:layout_constraintHorizontal_bias="0.5" app:layout_constraintBottom_toTopOf="@+id/revueltasIzquierda"/>
 
@@ -79,7 +79,7 @@
             android:text="@string/frijol_con_queso"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="20dp" android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@+id/frijolIzquierda"
+            app:layout_constraintTop_toBottomOf="@+id/frijolIDerechaArroz"
             app:layout_constraintStart_toStartOf="@+id/guideline2" android:layout_marginStart="8dp"
             app:layout_constraintHorizontal_bias="0.5" app:layout_constraintBottom_toTopOf="@+id/revueltasDerecha"/>
 
