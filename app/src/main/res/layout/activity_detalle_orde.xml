@@ -6,12 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
   <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      tools:context=".DetalleOrdeActivity"
+      tools:context=".Activities.DetalleOrdeActivity"
       android:paddingStart="30dp"
       android:paddingEnd="30dp"
+
   >
 
     <TextView
@@ -187,7 +189,7 @@
     <TextView
         android:id="@+id/lineItemPriceTotal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="8dp"
         android:text="@string/pupusa_line_item_price"
         android:layout_marginTop="@dimen/line_items_margin_top"
         app:layout_constraintTop_toBottomOf="@+id/divider"

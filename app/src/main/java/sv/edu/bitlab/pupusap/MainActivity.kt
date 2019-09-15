@@ -7,8 +7,8 @@ import android.os.PersistableBundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
-import sv.edu.bitlab.pupusap.DetalleOrdeActivity.Companion.CONTADOR_ARROZ
-import sv.edu.bitlab.pupusap.DetalleOrdeActivity.Companion.CONTADOR_MAIZ
+
+import sv.edu.bitlab.pupusap.Activities.DetalleOrdenActivity
 
 class MainActivity : AppCompatActivity() {
     var contadoresMaiz = hashMapOf(
@@ -76,7 +76,8 @@ class MainActivity : AppCompatActivity() {
 
         sendButton = findViewById(R.id.sendButton)
         sendButton!!.setOnClickListener {
-            confirmarOrden()
+           confirmarOrden()
+           // confirmarOrdenFragment()
         }
 
         loadingContainer = findViewById(R.id.loadingContainer)
@@ -121,7 +122,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun confirmarOrden() {
-        val intent = Intent(this, DetalleOrdeActivity::class.java)
+        val intent = Intent(this, DetalleOrdenActivity::class.java)
         val arroz = arrayListOf<Int>(
             contadoresArroz[QUESO]!!,
             contadoresArroz[FRIJOLES]!!,
@@ -132,11 +133,13 @@ class MainActivity : AppCompatActivity() {
             contadoresMaiz[REVUELTAS]!!)
 
 
-        intent.putExtra(CONTADOR_ARROZ, arroz)
-        intent.putExtra(CONTADOR_MAIZ, maiz)
+        intent.putExtra(DetalleOrdenActivity.CONTADOR_ARROZ, arroz)
+        intent.putExtra(DetalleOrdenActivity.CONTADOR_MAIZ, maiz)
 
         this.startActivity(intent)
     }
+
+
 
     fun showLoading(show: Boolean) {
         val visibility = if(show) View.VISIBLE else View.GONE
@@ -148,6 +151,8 @@ class MainActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState, outPersistentState)
 
     }
+
+
 
     companion object{
         const val QUESO = "QUESO"

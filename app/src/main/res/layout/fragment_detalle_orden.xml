@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".fragments.DetalleOrdenFragment">
+
+  <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+                                                     android:layout_height="match_parent"
+                                                     android:paddingStart="30dp"
+                                                     android:paddingEnd="30dp">
+
+
+    <TextView
+
+        android:text="Resumen de Orden"
+
+        android:textSize="25sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/detailTitleLabel" android:layout_marginTop="32dp" app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/pupusaImage" app:layout_constraintVertical_bias="1.0"/>
+    <ImageView
+        android:src="@drawable/pupusas"
+        android:layout_width="198dp"
+        android:layout_height="174dp"
+        android:id="@+id/pupusaImage" android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3" app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+        app:layout_constraintHorizontal_bias="0.497"/>
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:id="@+id/guideline3"
+                                                android:orientation="horizontal"
+                                                app:layout_constraintGuide_percent="0.36"/>
+    <TextView
+        android:text="@string/pupusa_line_item_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lineItemDetail1" app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+        app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="28dp"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/lineItemDetail2" app:layout_constraintVertical_bias="1.0"/>
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:id="@+id/guideline4"
+                                                android:orientation="vertical"
+                                                app:layout_constraintGuide_percent="0.5"/>
+    <TextView
+        android:text="@string/pupusa_line_item_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lineItemDetail2" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4" android:layout_marginEnd="8dp"
+        app:layout_constraintHorizontal_bias="0.0" android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/lineItemDetail3"/>
+    <TextView
+        android:text="@string/pupusa_line_item_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lineItemDetail3" android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/lineItemDetail4" app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        android:layout_marginEnd="8dp" app:layout_constraintHorizontal_bias="0.0"/>
+    <TextView
+        android:text="@string/pupusa_line_item_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lineItemDetail4" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4" android:layout_marginEnd="8dp"
+        app:layout_constraintHorizontal_bias="0.0" android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/lineItemDetail5"/>
+    <TextView
+        android:text="@string/pupusa_line_item_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lineItemDetail5" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4" android:layout_marginEnd="8dp"
+        app:layout_constraintHorizontal_bias="0.0" android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/lineItemDetail6"/>
+    <TextView
+        android:text="@string/pupusa_line_item_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lineItemDetail6" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4" android:layout_marginEnd="8dp"
+        app:layout_constraintHorizontal_bias="0.0" android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"/>
+    <TextView
+        android:text="@string/pupusa_line_item_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lineItemPrice1" app:layout_constraintStart_toStartOf="@+id/guideline4"
+        android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+        app:layout_constraintHorizontal_bias="1.0" android:layout_marginTop="8dp"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/lineItemPrice2" app:layout_constraintVertical_bias="1.0"/>
+    <TextView
+        android:text="@string/pupusa_line_item_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lineItemPrice2" app:layout_constraintStart_toStartOf="@+id/guideline4"
+        android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+        app:layout_constraintHorizontal_bias="1.0" app:layout_constraintBottom_toTopOf="@+id/lineItemPrice3"
+        android:layout_marginBottom="8dp"/>
+    <TextView
+        android:text="@string/pupusa_line_item_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lineItemPrice3" app:layout_constraintStart_toStartOf="@+id/guideline4"
+        android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+        app:layout_constraintHorizontal_bias="1.0" app:layout_constraintBottom_toTopOf="@+id/lineItemPrice4"
+        android:layout_marginBottom="8dp"/>
+    <TextView
+        android:text="@string/pupusa_line_item_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lineItemPrice4" app:layout_constraintStart_toStartOf="@+id/guideline4"
+        android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+        app:layout_constraintHorizontal_bias="1.0" app:layout_constraintBottom_toTopOf="@+id/lineItemPrice5"
+        android:layout_marginBottom="8dp"/>
+    <TextView
+        android:text="@string/pupusa_line_item_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lineItemPrice5" app:layout_constraintStart_toStartOf="@+id/guideline4"
+        android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+        app:layout_constraintHorizontal_bias="1.0" app:layout_constraintBottom_toTopOf="@+id/lineItemPrice6"
+        android:layout_marginBottom="8dp"/>
+    <TextView
+        android:text="@string/pupusa_line_item_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lineItemPrice6" app:layout_constraintStart_toStartOf="@+id/guideline4"
+        android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+        app:layout_constraintHorizontal_bias="1.0" android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"/>
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:id="@+id/guideline5"
+                                                android:orientation="horizontal"
+                                                app:layout_constraintGuide_percent="0.66"/>
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"
+        tools:layout_editor_absoluteX="-9dp" app:layout_constraintTop_toTopOf="@+id/guideline5"
+        android:layout_marginTop="20dp"/>
+    <Button
+        android:text="Confirmar Orden"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/comfirmOrder" app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="44dp"
+        app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginTop="8dp"
+        app:layout_constraintTop_toTopOf="@+id/guideline6" app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintVertical_bias="1.0"/>
+    <TextView
+        android:text="TOTAL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lineItemDetailTotal" android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/divider2" app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        android:layout_marginEnd="8dp" android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6" app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintVertical_bias="0.113"/>
+    <TextView
+        android:text="@string/pupusa_line_item_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lineItemPriceTotal" app:layout_constraintStart_toStartOf="@+id/guideline4"
+        android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+        android:layout_marginTop="20dp" app:layout_constraintTop_toBottomOf="@+id/divider2"
+        app:layout_constraintHorizontal_bias="1.0" android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6" app:layout_constraintVertical_bias="0.113"/>
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:id="@+id/guideline6"
+                                                android:orientation="horizontal"
+                                                app:layout_constraintGuide_percent="0.82"/>
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+<FrameLayout android:layout_width="match_parent"
+             android:layout_height="match_parent"
+              android:background="@color/blackTransparent"
+             android:id="@+id/loadingLayout"
+             android:visibility="gone"
+
+
+>
+  <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+                                                     android:layout_height="match_parent"
+
+
+  >
+
+
+    <TextView
+        android:text="LOADING..."
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView19" android:layout_marginTop="8dp"
+        app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
+  <FrameLayout android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:id="@+id/sentOrderLayout"
+               android:background="@color/lighGreen"
+               android:visibility="gone"
+
+  >
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+                                                       android:layout_height="match_parent">
+
+
+      <TextView
+          android:text="Orden Enviada"
+          android:textSize="40sp"
+          android:textColor="@color/white"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/textView20" android:layout_marginTop="8dp"
+          app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
+          app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+          android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+          android:layout_marginStart="8dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </FrameLayout>
+</FrameLayout>
