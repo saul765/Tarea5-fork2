@@ -10,6 +10,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_detalle_orden.*
+import kotlinx.android.synthetic.main.activity_detalle_orden.view.*
 import kotlinx.android.synthetic.main.fragment_detalle_orden.*
 import kotlinx.android.synthetic.main.fragment_detalle_orden.view.*
 import sv.edu.bitlab.pupusap.R
@@ -72,12 +74,22 @@ class DetalleOrdenFragment : Fragment() {
 
     vista.comfirmOrder.setOnClickListener {
 
-      loadingLayout.visibility=View.VISIBLE
+      /*
+      descomentarear para lanzar layouts desde fragment
+      loadingLayout.visibility=View.VISIBLE*/
+     activity!!.detalle_orden.visibility=View.GONE
+      activity!!.loadingLayoutAct.visibility=View.VISIBLE
 
       handler.postDelayed({
         activity!!.runOnUiThread {
-            loadingLayout.visibility=View.GONE
-            sentOrderLayout.visibility=View.VISIBLE
+          /*
+
+          descomentarear para lanzar layouts desde fragment
+          loadingLayout.visibility=View.GONE
+            sentOrderLayout.visibility=View.VISIBLE*/
+
+          activity!!.loadingLayoutAct.visibility=View.GONE
+          activity!!.sentOrderLayoutAct.visibility=View.VISIBLE
         }
       }, FIVE_SECONDS)
 
@@ -86,6 +98,12 @@ class DetalleOrdenFragment : Fragment() {
     vista.sentOrderLayout.setOnClickListener {
 
       sentOrderLayout.visibility=View.GONE
+    }
+
+    activity!!.sentOrderLayoutAct.setOnClickListener {
+
+      activity!!.sentOrderLayoutAct.visibility=View.GONE
+      activity!!.detalle_orden.visibility=View.VISIBLE
     }
 
     return vista
